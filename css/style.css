@@ -1,3 +1,6 @@
+/* Fonts */
+@import 'fonts.css';
+
 body{
     margin: 0;
     padding: 0;
@@ -8,6 +11,9 @@ a{
     text-decoration: none;
 }
 
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
 
 /* Header */
 header{
@@ -109,6 +115,13 @@ header nav ul.aw-navigation li a:hover:after{
     opacity: .7;
 }
 
+.aw-container h3{
+    width: 100%;
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
 /* Logo */
 a.aw-logo {
     display: flex;
@@ -139,4 +152,22 @@ a.aw-logo {
     100%{
         opacity: 0.3;
     }
+}
+
+/* Section */
+.aw-section{
+    padding: 85px 0;
+}
+
+/* About us */
+
+#aw-about .aw-column{
+    width: 48%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#aw-about  i{
+    font-size: 45px;
+    color: #dca453;
 }
