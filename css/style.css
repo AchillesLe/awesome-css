@@ -1,0 +1,142 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+/* Header */
+header{
+    position: relative;
+}
+
+header nav {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    padding: 10px 0;
+    z-index: 999;
+}
+
+header nav ul.aw-navigation{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul.aw-navigation li a{
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0 16px;
+}
+
+header nav ul.aw-navigation li:first-child a{
+    padding-left: 0;
+}
+
+header nav ul.aw-navigation li:last-child a{
+    padding-right: 0;
+}
+
+header nav ul.aw-navigation li a:after{
+    content: '';
+    display: block;
+    height: 1px;
+    width: 0;
+    background-color: #fff;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+header nav ul.aw-navigation li a:hover:after{
+    width: 100%;
+    opacity: 1;
+}
+
+.aw-container{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+}
+
+.aw-align-center{
+    align-items: center;
+}
+
+.aw-header-text{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.5);
+    flex-direction: column;
+}
+
+.aw-header-text h1{
+    color: #fff;
+    font-size: 70px;
+    font-weight: lighter;
+}
+
+.aw-main-banner{
+    display: block;
+    width: 100%;
+}
+
+.aw-arrow{
+    display: inline-block;
+    padding: 20px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    cursor: pointer;
+    transform: rotate(45deg);
+}
+
+.aw-arrow:hover{
+    opacity: .7;
+}
+
+/* Logo */
+a.aw-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    font-size: 26px;
+    border: solid 2px #fff;
+    border-radius: 100%;
+}
+
+/* Animation */
+.aw-pulsate{
+    animation: pulsate 3s ease-in-out;
+    -webkit-animation: pulsate 3s ease-in-out;
+    opacity: .3;
+}
+
+@-webkit-keyframes pulsate{
+    0%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.3;
+    }
+}
