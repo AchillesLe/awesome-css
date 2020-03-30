@@ -285,3 +285,47 @@ section h3:first-letter{
     left: 120%;
     transform: rotate(-45deg);
 }
+
+/* Contact */
+#aw-contact{
+    /* background: #dca453; */
+}
+
+#aw-contact form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#aw-contact form input:not([type="submit"]) ,
+#aw-contact form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#aw-contact form textarea {
+    height: 100px;
+    resize: none;
+}
+
+#aw-contact form *::-webkit-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact form *::-moz-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact form *::-ms-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
