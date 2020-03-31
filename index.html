@@ -10,15 +10,15 @@
     <body>
         <!-- Website Header -->
         <header>
-            <nav>
-                <div class="aw-container">
-                    <a href="#" class="aw-logo">Aw!</a>
-                    <ul class="aw-navigation aw-align-center">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#aw-about">About us</a></li>
-                        <li><a href="#aw-gallery">Gallery</a></li>
-                        <li><a href="#aw-testimonials">Testimonials</a></li>
-                        <li><a href="#aw-contact">Contact</a></li>
+            <nav class="aw-nav-fixed">
+                <div class="aw-container  aw-align-center">
+                    <a class="aw-logo aw-section-link" href="#" >Aw!</a>
+                    <ul class="aw-navigation">
+                        <li><a class="aw-section-link" href="#">Home</a></li>
+                        <li><a class="aw-section-link" href="#aw-about">About us</a></li>
+                        <li><a class="aw-section-link" href="#aw-gallery">Gallery</a></li>
+                        <li><a class="aw-section-link" href="#aw-testimonials">Testimonials</a></li>
+                        <li><a class="aw-section-link" href="#aw-contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -26,7 +26,7 @@
             <section class="aw-header-content">
                 <div class="aw-header-text">
                     <h1 class="aw-pulsate">I'm Awesome!</h1>
-                    <i class="aw-arrow"></i>
+                    <i class="aw-arrow aw-section-link" date-href="#aw-about"></i>
                 </div>
                 <img class="aw-main-banner" src="./img/main-banner.jpg" alt="Awesome main banner">
             </section>
@@ -128,7 +128,17 @@
 
         <!-- Website Footer -->
         <footer>
-
+            <div class="aw-container aw-align-center">
+                <a href="#" class="aw-logo aw-section-link">Aw!</a>
+                <ul class="aw-social-icons">
+                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li><a href="#"><i class="icon-vimeo"></i></a></li>
+                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
+                </ul>
+            </div>
         </footer>
+
+        <script src="./js/main.js" defer ></script>
     </body>
 </html>

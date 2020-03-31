@@ -23,9 +23,15 @@ header{
 header nav {
     position: fixed;
     width: 100%;
-    background: rgba(0,0,0,.5);
     padding: 10px 0;
+    margin: 10px 0;
     z-index: 999;
+    transition: all .3s ease;
+}
+
+header nav.aw-nav-fixed{
+    background: rgba(0,0,0,.5);
+    margin: 0;
 }
 
 header nav ul.aw-navigation{
@@ -135,24 +141,6 @@ a.aw-logo {
     border-radius: 100%;
 }
 
-/* Animation */
-.aw-pulsate{
-    animation: pulsate 3s ease-in-out;
-    -webkit-animation: pulsate 3s ease-in-out;
-    opacity: .3;
-}
-
-@-webkit-keyframes pulsate{
-    0%{
-        opacity: 0.3;
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0.3;
-    }
-}
 
 /* Section */
 .aw-section{
@@ -328,4 +316,71 @@ section h3:first-letter{
 #aw-contact form *::-ms-input-placeholder {
     color: #ccc;
     font-style: italic;
+}
+
+#aw-contact input[type="submit"]{
+    border: none;
+    padding: 10px 30px;
+    color: #fff;
+    background: #dca453;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    box-shadow: inset 0 -3px 0 0 #c79552;
+    transition: all .3s ease;
+}
+
+#aw-contact input[type="submit"]:hover{
+    color: #f5f5f5;
+    box-shadow: inset 0 -3px 0 0 #a27c47;
+}
+
+/* Footer */
+
+footer {
+    background: #444;
+}
+
+footer .aw-logo{
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+}
+
+footer .aw-social-icons{
+    display: flex;
+    list-style-type: none;
+}
+
+footer .aw-social-icons li{
+    margin-left: 15px;
+}
+
+footer .aw-social-icons li a{
+    color: #fff;
+    display: flex;
+    transition: all .3s ease;
+}
+
+footer .aw-social-icons li a:hover{
+    opacity: 0.7;
+}
+/* Animation */
+.aw-pulsate{
+    animation: pulsate 3s ease-in-out;
+    -webkit-animation: pulsate 3s ease-in-out;
+    opacity: .3;
+}
+
+@-webkit-keyframes pulsate{
+    0%{
+        opacity: 0.3;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0.3;
+    }
 }
