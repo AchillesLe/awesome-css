@@ -1,7 +1,8 @@
 (()=>{
     const mobileWidth       = 680;
+    const pageWidth         = window.innerWidth;
+
     const addMenuBackground = ()=>{
-        const pageWidth     = window.innerWidth;
         const bodyOffset    = document.body.scrollTop || document.documentElement.scrollTop;
         const navigation    = document.querySelector('header nav');
         if(pageWidth > mobileWidth){
@@ -25,9 +26,10 @@
     const scrollToSection = (sectionId) => {
         let sectionPosition , sectionOffset;
         const navigationHeight = document.querySelector("header nav").offsetHeight;
+        
         if(sectionId != "#"){
             sectionOffset = document.querySelector(sectionId).offsetTop;
-            sectionPosition = sectionOffset - navigationHeight;
+            sectionPosition = pageWidth > mobileWidth ? sectionOffset - navigationHeight : sectionOffset;
         }else{
             sectionPosition = 0;
         }
@@ -37,10 +39,83 @@
             'top':sectionPosition
         });
     }
+    
+    const onTestimonialChange = () => {
+        let firstChild, lastChild;
+        const prevArrow = document.querySelector('#aw-testimonials-prev');
+        const nextArrow = document.querySelector('#aw-testimonials-next');
+        const testimonials = document.querySelector(".aw-testimonials ul");
+
+        document.addEventListener("click",()=>{
+            if(event.target == prevArrow){
+                lastChild = testimonials.lastElementChild;
+                testimonials.insertAdjacentElement("afterBegin",lastChild);
+            }else if(event.target === nextArrow){
+                firstChild = testimonials.firstElementChild;
+                testimonials.insertAdjacentElement("beforeEnd",firstChild);
+            }
+        })
+    }
+
+    const onGalleryImageClick = ()=>{
+        const galleryImageList = document.querySelectorAll("#aw-gallery li");
+        const gallery = [...galleryImageList];
+        galleryImageList.forEach(image=>{
+            image.addEventListener("click",(event)=>{
+                galleryImageOpen(event.target);
+            })
+        })
+    }
+
+    const galleryImageOpen = (image) => {
+        const imageSrc      = image.getAttribute("src");
+        const openedImage   = `<div class='aw-backdrop'><img src=${imageSrc} alt=''/>
+                                <span class='aw-backdrop-close'>X</span>
+                            </div>`;
+        document.body.insertAdjacentHTML("beforeEnd",openedImage);
+        ongalleryImageClose();
+    }
+
+    const ongalleryImageClose = () => {
+        const closeButton = document.querySelector(".aw-backdrop-close");
+        closeButton.addEventListener("click",()=>{
+            const backdrop = document.querySelector(".aw-backdrop");
+            backdrop.remove();
+        });
+    }
+
+    const renderResponsiveMenu = ()=>{
+        const pageWidth         = window.innerWidth;
+        const navContainer = document.querySelector("header nav .aw-container");
+        const navigation = document.querySelector("header nav .aw-navigation");
+        const mobileNavigation = document.querySelector("body > .aw-navigation");
+        if(pageWidth <= mobileWidth && navigation){
+            document.body.insertAdjacentElement("afterBegin",navigation);
+            moblieMenuToggle();
+        }else if(pageWidth > mobileWidth && mobileNavigation){
+            navContainer.insertAdjacentElement("beforeEnd",mobileNavigation);
+        }
+    }
+
+    const moblieMenuToggle = ()=>{
+        const mobileNavigation = document.querySelector("body > .aw-navigation");
+        const menuToggle = document.querySelector(".aw-nav-toggle"); 
+        menuToggle.addEventListener("click",()=>{
+        
+            mobileNavigation.classList.toggle("aw-navgation-opened");
+        })
+    }
 
     window.addEventListener("scroll",()=>{
         addMenuBackground();
     });
 
+    window.addEventListener("resize",()=>{
+        renderResponsiveMenu();
+    });
+
     onNavItemClick();
+    onTestimonialChange();
+    onGalleryImageClick();
+    renderResponsiveMenu();
 })();
