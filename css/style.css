@@ -428,7 +428,8 @@ footer .aw-social-icons li a:hover{
 
 @media all and (max-width:1020px){
     .aw-container{
-        padding: 0 15px;
+        padding-left:15px;
+        padding-right:15px;
     }
 }
 
@@ -508,6 +509,14 @@ footer .aw-social-icons li a:hover{
 }
 
 @media all and (max-width:600px){
+    #aw-about .aw-column {
+        width: 100%;
+    }
+    
+    #aw-gallery li {
+        width: 33.33%;
+    }
+    
     .aw-header-text h1{
         font-size: 35px;
     }
